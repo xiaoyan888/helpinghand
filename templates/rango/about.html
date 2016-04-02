@@ -1,0 +1,29 @@
+{% extends 'base1.html' %}
+{% load staticfiles %} # load media file
+
+{% block title %}About{% endblock %}
+
+{% block body_block %}
+ <div id="msg">Hello</div>
+     <div class="page-header">
+        <h1> Rango says... about what? </h1>
+         </div>
+    <div>
+          <strong> {{ linemessage }} </strong>> <br />
+        <img width="550" height="900" src="{% static "chen.jpg" %}" alt = "Picture of Rango" />  <br /># add static media file
+        <p> visits: {{ visits }}  </p>
+    </div>
+
+
+ <p>This is a example</p>
+<button onClick="alert('You clicked the button using Javascript.');">
+        Click Me - I run Javascript
+</button>
+
+<p>This is another example</p>
+<button id="about-btn"> click me - i am javascrip on speed </button>
+
+
+<button class="ouch"> click me - oh </button>
+
+{% endblock %}

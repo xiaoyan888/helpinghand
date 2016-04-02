@@ -1,0 +1,26 @@
+{% extends 'base1.html' %}
+
+{% block body_block %}
+
+        <h1>Login to Rango</h1>
+
+        <form id="login_form" method="post" action="/rango/login/">
+
+                {% csrf_token %}
+            Username: <input type="text" name="username" value="" size="50" />
+            <br />
+            Password: <input type="password" name="password" value="" size="50" />
+            <br />
+
+            <!-- it will never go own to here -->
+            <!-- ##{% if user  %} view already take care of logic not need in here twice-->
+            {% else %}
+                Rango says: <strong>please provide valid user login details!</strong><br />
+                {% if user.is_active %}
+            {% else %}
+                Rango says: <strong>your account is not active !</strong><br />
+            {% endif %}
+            {% endif %}
+            <input type="submit" value="submit" />
+        </form>
+{% endblock %}
